@@ -1,0 +1,128 @@
+.desserts {
+  padding: 24px;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: left;
+  color: #260F08; 
+  margin-bottom: 32px;
+}
+.dessert-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.product-img {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 38px;
+  > img {
+    width: 327px;
+    height: 212px;
+  }
+  .add-btn {
+    position: absolute;
+    top: 190px;
+    left: 83px;
+    border: none;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #AD8A85;
+    border-radius: 30px;
+    width: 160px;
+    padding-block: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.52px;
+  }
+}
+span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.52px;
+  color: #87635A;
+  margin-bottom: 4px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.17px;
+  color: #260F08;
+  margin-bottom: 4px;
+}
+h5 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.17px;
+  text-align: left;
+  color: #C73B0F;
+}
+.basket {
+  margin-top: 32px;
+  padding: 24px;
+  margin-inline: 24px;
+  background-color: #FFF;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31.75px;
+  text-align: left;
+  color: #C73B0F;
+}
+.empty-basket {
+  padding-block: 16px;
+  margin-top: 24px;
+  img {
+    margin-inline: auto;
+  } 
+  p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.52px;
+    text-align: center;
+    color: #87635A;
+    margin-top: 16px;
+  }
+}
+
+@media (width > 425px) {
+  .product-img {
+    > img {
+      width: 214px;
+    }
+    .add-btn {
+      left: 26px;
+    }
+  }
+}
+@media (width > 768px) {
+  .container {
+    display: flex;
+    gap: 32px;
+  }
+  .desserts {
+    padding: 88px 0px 88px 112px;
+  }
+  .product-img {
+    > img {
+      width: 250px;
+    }
+    .add-btn {
+      left: 45px;
+    }
+  }
+  .basket {
+    margin: 88px 112px 88px 0px;
+    border-radius: 12px;
+    min-width: 384px;
+    align-self: flex-start ;
+    position: sticky;
+    top: 20px;
+  }
+}
