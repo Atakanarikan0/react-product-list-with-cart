@@ -1,3 +1,43 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+ul {
+  padding: 0;
+}
+
+
+#root, #__next {
+  isolation: isolate;
+}
 .desserts {
   padding: 24px;
 }
@@ -14,10 +54,44 @@ h1 {
   flex-wrap: wrap;
   gap: 24px;
 }
+
+.border {
+  border: 3px solid #C73B0F;
+  border-radius: 10px;
+}
 .product-img {
   cursor: pointer;
   position: relative;
   margin-bottom: 38px;
+  div {
+    position: absolute;
+    top: 190px;
+    left: 83px;
+    background-color: #C73B0F ;
+    color: #FFF;
+    display: flex ;
+    justify-content: space-evenly ;
+    align-items: center ;
+    padding-inline: 1px;
+    border: none ;
+    gap: 8px;
+    padding-block: 12px;
+    border-radius: 30px;
+    width: 160px;
+    button {
+      background: inherit;
+      border: none;
+      color: #FFF;
+      font-size: large;
+    }
+    span {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18.52px;
+      color: #FFF;
+    }
+  }
+  
   > img {
     width: 327px;
     height: 212px;
@@ -41,6 +115,53 @@ h1 {
     line-height: 18.52px;
   }
 }
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 24px;
+  h6 {
+    color: #260F08;
+  }
+  span {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31.75px;
+    color: #260F08;
+  }
+}
+.delivery-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FCF8F6;
+  padding: 16px 23px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  gap: 3;
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.52px;
+    text-align: left;
+    color: #260F08;
+  }
+}
+.confirm-btn {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.17px;
+  text-align: left;
+  color: #FFF;
+  background: #C73B0F;
+  border: none;
+  width: 100%;
+  padding-block: 16px;
+  text-align: center;
+  border-radius: 30px;
+}  
+
 span {
   font-size: 14px;
   font-weight: 400;
@@ -91,14 +212,103 @@ h2 {
   }
 }
 
+.card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #F5EEEC;
+  padding-block: 16px;
+}
+.item-name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.52px;
+  color: #260F08;
+}
+.item-piece {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.52px;
+  color: #C73B0F;
+  margin-right: 12px;
+}
+.item-price {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.52px;
+  color: #87635A;
+}
+.item-total {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.52px;
+  color: #87635A;
+  margin-left: 8px;
+}
+.remove-btn {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+dialog {
+  padding: 40px 24px;
+  min-width: 375px;
+  border: 0;
+  border-radius: 12px;
+  margin-top: auto;
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    color: #260F08;
+    margin-top: 24px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.17px;
+    color: #87635A;
+    margin-top: 8px;
+  }
+  ul {
+    background: #FCF8F6;
+    padding: 24px;
+    margin-top: 32px;
+    border-radius: 8px;
+  }
+
+  button {
+    color: #FFF;
+    background-color: #C73B0F;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.17px;
+    border: none;
+    width: 100%;
+    padding-block: 16px;
+    border-radius: 30px;
+    margin-top: 32px;
+  }
+
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+
 @media (width > 425px) {
   .product-img {
     > img {
       width: 214px;
     }
-    .add-btn {
+    .add-btn,  div {
       left: 26px;
     }
+  }
+
+  dialog {  
+    margin: auto ;
   }
 }
 @media (width > 768px) {
@@ -113,7 +323,7 @@ h2 {
     > img {
       width: 250px;
     }
-    .add-btn {
+    .add-btn,  div {
       left: 45px;
     }
   }
